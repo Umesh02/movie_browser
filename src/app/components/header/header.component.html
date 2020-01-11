@@ -1,0 +1,28 @@
+<div class="alert alert-info outer-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3
+          class="app-clickable"
+          [routerLink]="['/home']"
+          (click)="clearInput(inputValue)"
+        >
+          Movie Browser
+        </h3>
+      </div>
+      <div class="col-md-8">
+        <form (submit)="submitHander($event)">
+          <input
+            type="text"
+            name="queryTerm"
+            placeholder="search movies..."
+            class="form-control"
+            [(ngModel)]="queryTerm"
+            appAutofocus
+            #inputValue
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
