@@ -9,6 +9,8 @@ import { HeaderComponent } from "./components/header/header.component";
 import { MovieListComponent } from "./components/movie-list/movie-list.component";
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { AutofocusDirective } from './directives/autofocus.directive';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,7 @@ import { AutofocusDirective } from './directives/autofocus.directive';
     MovieDetailsComponent,
     AutofocusDirective
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [],
   bootstrap: [AppComponent]
 })
